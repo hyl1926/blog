@@ -1,9 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{ route('add') }}">Add</a>
-<div style="width: 500px;height: 300px;border: 1px solid black;text-align: center;">
-	<table width="498" height="298" border="1">
+<style>
+#page li{
+	float: left;
+	list-style: none;
+	margin-left: 15px; 
+}
+#add{
+	float: left;
+	font-weight: bold;
+	margin: 15px 15px;
+}
+</style>
+<a id="add" href="{{ route('add') }}">Add</a>
+<div style="width: 800px;height: 500px;border: 1px solid black;text-align: center;">
+	<table width="798" height="498" border="1">
 		<tr>
 			<td>标题</td>
 			<td>操作</td>
@@ -15,7 +27,7 @@
 		</tr>
 		@endforeach
 		<tr>
-			<td colspan="2">{!! $n->render() !!}</td>
+			<td colspan="2" id="page">{!! $n->render() !!}</td>
 		</tr>
 	</table>
 </div>
